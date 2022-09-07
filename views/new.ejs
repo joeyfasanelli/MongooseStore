@@ -4,15 +4,17 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Book List</title>
+		<title>Product List</title>
 	</head>
 	<body>
-		<h1>New Book Page</h1>
-		<form action="/books" method="POST">
-			Title: <input type="text" name="title" /><br />
-			Author: <input type="text" name="author" /><br />
-			Completed: <input type="checkbox" name="completed" /><br />
-			<input type="submit" name="" value="Add Book" />
+		<h1>New Product Page</h1>
+		<form action="/products" method="POST">
+			Name: <input type="text" name="name" /><br />
+			Description: <input type="text" name="description" /><br />
+			Quantity: <input type="text" name="qty" /><br />
+            Price: <input type="text" name="price" /><br />
+            Image Link: <input type="text" name="img" /><br />
+			<input type="submit" name="" value="Add Product" />
 		</form>
 	</body>
 </html>

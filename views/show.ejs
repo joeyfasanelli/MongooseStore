@@ -8,11 +8,16 @@
 	</head>
 	<body>
 		<nav>
-			<a href="/books">Back to Books Index</a>
+			<a href="/products">Back to Product Page</a>
 		</nav>
-		<h1><%=book.title %></h1>
-		Author: <%= book.author%>
+		<h1><%=product.name %></h1>
+		Description: <%=product.description%>
 		<br />
-		Completed: <%= book.completed %>
+		Price: <%=product.price %>
+        <br />
+        Quantity: <%=product.qty %>
+        <br />
+        <img src= <%=product.img%>>
+
 	</body>
 </html>

@@ -40,7 +40,7 @@ app.get('/products/new', (req, res) => {
 // CREATE
 app.post("/products", (req, res)=>{
     Product.create(req.body, (error, createdProduct)=>{
-        res.redirect("/products");
+        res.send(createdProduct);
     });
 });
 

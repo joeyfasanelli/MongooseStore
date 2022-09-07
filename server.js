@@ -3,6 +3,7 @@ const app = express();
 require("dotenv").config();
 const mongoose = require("mongoose");
 const Product = require('./models/product.js');
+const methodOverride = require("method-override");
 
 
 // DATABASE CONFIGURATION
@@ -20,6 +21,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 
 // MIDDLEWARE & BODY PARSER
 app.use(express.urlencoded({extended: true}));
+app.use(methodOverride("_method"));
 
 // INDEX
 app.get('/products', (req, res) => {
@@ -36,7 +38,26 @@ app.get('/products/new', (req, res) => {
 });
 
 // DELETE
+app.delete('/products/:id', (req, res) => {
+    Product.findByIdAndDelete(req.params.id, (err, data) =>{
+        res.redirect("/products")
+    })
+});
+
 // UPDATE
+app.put("/products/:id", (req, res) => {
+    Product.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {
+            new: true,
+        },
+        (error, updatedProduct) => {
+            res.redirect(`/products/${req.params.id}`)
+        }
+    )
+})
+
 // CREATE
 app.post("/products", (req, res)=>{
     Product.create(req.body, (error, createdProduct)=>{
@@ -45,6 +66,14 @@ app.post("/products", (req, res)=>{
 });
 
 // EDIT
+app.get("/products/:id/edit", (req, res) => {
+    Product.findById(req.params.id, (error, products) => {
+        res.render('edit.ejs', {
+            product: products,
+        });
+    });
+});
+
 // SHOW
 app.get('/products/:id', (req, res) => {
 	Product.findById(req.params.id, (err, products) => {

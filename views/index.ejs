@@ -10,11 +10,12 @@
     <h1> Welcome to the Mongoose Store </h1>
     <ul>
         <% products.forEach(product => { %>
-        <li>
-            <a href="/products/<%=product._id; %>"> <%=product.name; %> </a>
-        </li>
+        
+            <a href="/products/<%=product._id; %>"> <img src=<%=product.img; %>> </a>
+        
         <% }) %>
     </ul>
+<a href="/products/new">Add New Product</a>
     
 </body>
 </html>

@@ -7,9 +7,7 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<nav>
-			<a href="/products">Back to Product Page</a>
-		</nav>
+		
 		<h1><%=product.name %></h1>
 		Description: <%=product.description%>
 		<br />
@@ -27,9 +25,10 @@
 
 
         <br />
-        <a href="/products/edit">Edit Product</a>
-        <br />
-        <a href="/products/">Back to Home Page</a>
+        <a href="/products/<%=product._id %>/edit">Edit</a>
+        <br/>
+        <a href="/products">Back to Product Page</a>
+        
 
 	</body>
 </html>

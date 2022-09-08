@@ -7,6 +7,14 @@
 		<title>Product List</title>
 	</head>
 	<body>
+        <h1> RETRO RECORDS </h1>
+    <ul class="navigation">
+        <li class="navbar">
+            <a class="productlink" href="/products/">Products</a>
+            <a class="productlink" href="/products/new">Add New Product</a>
+        </li>
+
+    </ul>
 		<h1>New Product Page</h1>
 		<form class="form" action="/products" method="POST">
 			Name: <input type="text" name="name" /><br />
@@ -16,6 +24,7 @@
             Image Link: <input type="text" name="img" /><br />
 			<input class="submit" type="submit" name="" value="Add Product" />
 		</form>
+    
 	</body>
 </html>
 
@@ -29,6 +38,32 @@
             margin: auto;
             background-color: black;
         }
+        .navigation {
+        background-color: black;
+        border-bottom: 1px solid #c75692;
+        border-top: 1px solid #c75692;
+        text-align: center;
+        list-style: none;
+        padding: 0px;
+       
+
+    }
+
+    .navbar {
+        padding: 18px;
+        
+    }
+
+    .productlink {
+        list-style: none;
+        vertical-align: baseline;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+        color: white;
+        font-family:'Montserrat', sans-serif;
+        padding: 0px 20px 0px 20px;
+        
+    }
     
     
         h1 {
@@ -42,6 +77,7 @@
         .form {
             color: white;
             padding: 0px 0px 0px 20px;
+            font-family:'Montserrat', sans-serif;
         }
 
         .submit {

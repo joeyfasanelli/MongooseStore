@@ -8,7 +8,7 @@
 	</head>
     
 	<body>
-        <h1> RETRO RECORDS </h1>
+        <h1>RETRO RECORDS</h1>
         <ul class="navigation">
             <li class="navbar">
                 <a class="productlink" href="/products/">Products</a>
@@ -31,8 +31,7 @@
         }%>>BUY</button> -->
         
         <a class="productlink" href="/products/<%=product._id %>/edit">Edit</a>
-        <br/>
-        <a class="productlink" href="/products">Back to Product Page</a>
+        
         <br></br>
         <form style="display:inline;" action="/products/<%= product._id %>?_method=DELETE" method="POST">
             <input class="delete" type="submit" value="DELETE" />

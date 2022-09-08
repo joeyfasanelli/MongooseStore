@@ -7,15 +7,24 @@
 		<title>Product List</title>
 	</head>
 	<body>
+        <h1> RETRO RECORDS </h1>
+    <ul class="navigation">
+        <li class="navbar">
+            <a class="productlink" href="/products/">Products</a>
+            <a class="productlink" href="/products/new">Add New Product</a>
+        </li>
+
+    </ul>
 		<h1>Edit Product</h1>
-		<form action="/products/<%=product._id%>?_method=PUT" method="POST">
+		<form class="form" action="/products/<%=product._id%>?_method=PUT" method="POST">
 			Name: <input type="text" name="name" value="<%=product.name%>" /><br />
 			Description: <input type="text" name="description" value="<%=product.description%>" /><br />
 			Quantity: <input type="text" name="qty" value="<%=product.qty%>" /><br />
             Price: <input type="text" name="price" value="<%=product.price%>"/><br />
             Image Link: <input type="text" name="img" value="<%=product.img%>" /><br />
-			<input type="submit" name="" value="Submit Changes"  />
+			<input class="edit" type="submit" name="" value="Submit Changes"  />
 		</form>
+    
 	</body>
 </html>
 
@@ -43,6 +52,7 @@
             border-bottom: 1px solid #c75692;
             border-top: 1px solid #c75692;
             text-align: center;
+            padding: 0px 0px 0px 0px;
             
         }
     
@@ -73,6 +83,33 @@
             color: #c75692;
         }
 
+        .form {
+            color: white;
+            padding: 0px 0px 0px 20px;
+            font-family:'Montserrat', sans-serif;
+        }
+
+        .edit {
+            width: 130px;
+            height: 40px;
+            border-color: #1f2024;
+            border-width: medium;
+            border-style: solid;
+            border-radius: 50px;
+            background-color: #1f2024;
+            color: white;
+            margin: 20px 0px 0px 0px;
+        }
+
+        .edit:hover {
+            background-color: #27272b;
+            cursor: pointer;
+        }
+
+        .edit:active {
+            background-color: #27272b;
+            transform: translateY(2px);
+}
     
     
     

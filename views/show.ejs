@@ -17,7 +17,7 @@
         </ul>
 		
      <div class="products">
-		<h1><%=product.name %></h1>
+		<h2><%=product.name %></h2>
 		Description: <%=product.description%>
 		<br />
 		Price: <%=product.price %>
@@ -35,7 +35,7 @@
         <a class="productlink" href="/products">Back to Product Page</a>
         <br></br>
         <form style="display:inline;" action="/products/<%= product._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="DELETE" />
+            <input class="delete" type="submit" value="DELETE" />
         </form>   
     </div>
 
@@ -82,6 +82,13 @@
 
     }
 
+    h2 {
+        color: white;
+        font-family: 'Pathway Gothic One', sans-serif;
+        padding: 0px 0px 0px 0px;
+
+    }
+
     .navbar {
         padding: 18px;
         
@@ -103,7 +110,28 @@
         color: #c75692;
     }
 
+    .delete {
+            width: 130px;
+            height: 40px;
+            border-color: #1f2024;
+            border-width: medium;
+            border-style: solid;
+            border-radius: 50px;
+            background-color: #1f2024;
+            color: white;
+            margin: 20px 0px 0px 0px;
+        }
 
+        .delete:hover {
+            background-color: #27272b;
+            cursor: pointer;
+        }
+
+        .delete:active {
+            background-color: #27272b;
+            transform: translateY(2px);
+
+        }
 
 
 </style>

@@ -23,6 +23,18 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 
+// SEED
+const productSeed = require('./models/productSeed.js');
+app.get('/products/seed', (req, res) => {
+    Product.deleteMany({}, (error, allProducts) => {});
+            
+        Product.create(productSeed, (error, data) => {
+            res.redirect('/products');
+                });
+            });
+        
+
+
 // INDEX
 app.get('/products', (req, res) => {
 	Product.find({}, (error, allProducts) => {
@@ -82,6 +94,7 @@ app.get('/products/:id', (req, res) => {
 		});
 	});
 });
+
 
 // LISTENER
 const PORT = process.env.PORT;
